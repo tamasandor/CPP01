@@ -6,7 +6,7 @@
 #    By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 15:10:46 by atamas            #+#    #+#              #
-#    Updated: 2024/10/21 17:01:42 by atamas           ###   ########.fr        #
+#    Updated: 2024/10/22 13:37:16 by atamas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
-all = $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
@@ -28,6 +28,6 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean $(all)
+re: fclean all
 
 .PHONY: all clean fclean re

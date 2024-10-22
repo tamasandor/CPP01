@@ -6,7 +6,7 @@
 #    By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 13:36:43 by atamas            #+#    #+#              #
-#    Updated: 2024/10/21 15:07:48 by atamas           ###   ########.fr        #
+#    Updated: 2024/10/22 13:37:10 by atamas           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp Zombie.cpp zombieHorde.cpp
 OBJ = $(SRC:.cpp=.o)
 
-all = $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
