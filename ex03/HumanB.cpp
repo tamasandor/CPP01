@@ -6,7 +6,7 @@
 /*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:19:37 by atamas            #+#    #+#             */
-/*   Updated: 2024/10/22 17:34:34 by atamas           ###   ########.fr       */
+/*   Updated: 2024/10/22 17:41:35 by atamas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ HumanB::~HumanB()
 {
 }
 
-void	setWeapon(Weapon &weapon);
+void	HumanB::setWeapon(Weapon *weapon)
 {
-	m_weapon = &weapon;
+	m_weapon = weapon;
 }
