@@ -1,0 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atamas <atamas@student.42wolfsburg.de>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/23 12:06:25 by atamas            #+#    #+#             */
+/*   Updated: 2024/10/23 18:05:35 by atamas           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int	main(int argc, char **argv)
+{
+	if (argc != 4)
+	{
+		std::cerr << "Wrongly formatted arguments!\n" << "Correct way is ./sed s1 s2 filename\n";
+		return (1);
+	}
+	std::string replaceme = argv[2];
+	std::ifstream inputFile;
+	std::ofstream outputFile;
+	std::string inputFileName = argv[argc - 1];
+	std::string outputFileName = inputFileName + ".replace";
+	inputFile.open(inputFileName.c_str());
+	if (!inputFile.is_open())
+	{
+		std::cerr << "Unable to open the file" << std::endl;
+		return (1);
+	}
+	outputFile.open(outputFileName.c_str());
+	if (!outputFile.is_open())
+	{
+		std::cerr << "Unable to open the file" << std::endl;
+		return (1);
+	}
+	std::string s;
+	while(getline(inputFile, s))
+	{
+		outputFile << s << '\n';
+	}
+	inputFile.close();
+	outputFile.close();
+}
